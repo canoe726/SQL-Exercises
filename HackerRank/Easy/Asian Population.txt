@@ -1,0 +1,5 @@
+select sum(ci.population)
+from country as co
+join city as ci
+on co.code = ci.countrycode
+where co.continent = 'asia'

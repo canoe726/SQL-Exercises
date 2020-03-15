@@ -1,0 +1,5 @@
+select ceil(avg(salary) - (
+    select avg(replace(salary, '0', ''))
+    from employees
+))
+from employees;
