@@ -1,0 +1,14 @@
+-- 코드를 입력하세요
+select distinct(a.cart_id)
+from cart_products as a,
+(
+    select *
+    from cart_products
+    where name = "요거트"
+) as b
+where a.name = "우유" and a.cart_id = b.cart_id
+order by a.cart_id
+
+SELECT A.CART_ID, COUNT(A.CART_ID) FROM CART_PRODUCTS AS A,
+(SELECT CART_ID FROM CART_PRODUCTS WHERE NAME="우유") AS B
+WHERE A.CART_ID = B.CART_ID AND A.NAME = "요거트" GROUP BY A.CART_ID
